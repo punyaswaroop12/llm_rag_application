@@ -33,4 +33,7 @@ print("started the indexing process...")
 # Create an index using the loaded documents and the created service context
 index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
 
+# Store the created index to the disk at the specified location
+print("storing the index to disk")
+index.storage_context.persist(persist_dir="data/aws_case_documents_index")
 
